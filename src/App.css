@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap");
+
+@import "tailwindcss";
+
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: auto; /* Disable smooth scrolling for better control */
+  -webkit-overflow-scrolling: touch; /* Add momentum scrolling for better mobile experience */
+  text-rendering: optimizeSpeed; /* Optimize for high DPI displays */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fdfdf6; /* Set a black background */
+}
+
+@keyframes rotate-border {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-border-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* Add this to your CSS file */
+@keyframes spin-y {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.animate-spin-y {
+  animation: spin-y 30s linear infinite;
+}
+
+.text-meadow-900,
+.text-meadow-900\/50 {
+  color: rgb(var(--meadow-900));
+}
+
+@keyframes logo-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  } /* adjust based on duplicate width */
+}
+
+.logo-marquee {
+  width: max-content;
+  animation: logo-scroll 20s linear infinite;
+}
+
+.logo-marquee-mask {
+  /* fade edges */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+  position: relative;
+}
+
+.text-meadow-900 {
+  color: #0d200b;
+}
