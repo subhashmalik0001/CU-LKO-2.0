@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import NavBar from "./NavBar";
+
 import CoverVideo from "./CoverVideo";
 import video from "../media/frame_001.mp4";
 
@@ -22,7 +22,7 @@ export default function ScrollVideo() {
   const videoRef = useRef(null);
 
   // UI state
-  const [navOpacity, setNavOpacity] = useState(1);
+
   const [heroOpacity, setHeroOpacity] = useState(1);
   const [heroScale, setHeroScale] = useState(1);
   const [canvasPos, setCanvasPos] = useState("fixed");
@@ -64,7 +64,7 @@ export default function ScrollVideo() {
       scrollProgressRef.current = p; // save progress for video scrubber
 
       // --- Navbar fade
-      const nOp = p < NAV_FADE_END ? 1 - p / NAV_FADE_END : 0;
+
 
       // --- Hero opacity & scale
       let hOp;
@@ -123,7 +123,7 @@ export default function ScrollVideo() {
       const oScaleFactor = 1 - 0.2 * slideT;
 
       if (mountedRef.current) {
-        setNavOpacity(nOp);
+
         setHeroOpacity(hOp);
         setHeroScale(scale);
         setCanvasSlideVh(slideVh);
@@ -182,21 +182,7 @@ export default function ScrollVideo() {
         marginBottom: `-${CANVAS_SLIDE_DISTANCE_VH}vh`,
       }}
     >
-      {/* Navbar */}
-      <div
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          zIndex: 200,
-          opacity: navOpacity,
-          transition: "opacity 0.18s linear",
-          pointerEvents: navOpacity > 0 ? "auto" : "none",
-        }}
-      >
-        <NavBar />
-      </div>
+
 
       {/* Video container (replaces canvas) */}
       <div style={{ position: "relative" }}>
@@ -239,10 +225,11 @@ export default function ScrollVideo() {
           right: 0,
         }}
       >
-        <h1 className="max-w-[1000px] text-center font-sans leading-tight text-meadow-900 text-xl sm:text-2xl md:text-3xl xl:text-4xl tracking-tight">
-          Tuning creative minds with the will to create
+        <h1 className="max-w-[1000px] text-center font-sans leading-tight text-meadow-900 text-xl sm:text-2xl md:text-3xl xl:text-6xl tracking-tight">
+         India's 1st 
+
           <br className="hidden sm:block" />
-          into a successful founder—start your story.
+          AI Augmented University
         </h1>
       </div>
     </div>

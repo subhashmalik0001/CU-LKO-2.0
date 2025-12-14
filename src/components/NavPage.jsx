@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
-import NavBar from "./NavBar.jsx";
+
 import ScrollSection from "./ScrollSection.jsx";
 import Details from "./Details.jsx";
 import Library from "./Library.jsx";
 import Footer from "./Footer.jsx";
 import BrandGrid from './BrandGrid.jsx'
 
-const NAV_HEIGHT = 90; // keep in sync with NavBar height
+const NAV_HEIGHT = 0; // Removed NavBar
 
 const NavPage = () => {
   const containerRef = useRef(null);
@@ -59,20 +59,7 @@ const NavPage = () => {
   return (
     <div ref={containerRef}>
       {/* Fixed shared NavBar shown only while this container is in view */}
-      <div
-        className="bg-[#fdfdf6] border border-transparent border-b-[#0a1d08]/20 shadow-sm"
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          height: NAV_HEIGHT,
-          zIndex: 1000,
-          display: showNav ? "block" : "none",
-        }}
-      >
-        <NavBar />
-      </div>
+
 
       {/* Spacer under fixed nav when visible to avoid overlap */}
       <div style={{ height: showNav ? NAV_HEIGHT : 0 }} />
